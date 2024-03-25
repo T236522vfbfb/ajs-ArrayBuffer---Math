@@ -8,8 +8,8 @@ export default class Character {
   get attack() {
     return (distance) => {
       let attack = this.attackValue - 10 * (distance - 1);
-      if (this.stoned) {
-        attack = Math.log2(distance) * 5;
+      if (this.stonedStatus) {
+        attack -= Math.log2(distance) * 5;
       }
       attack = Math.round(attack);
       return attack;
